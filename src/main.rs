@@ -12,6 +12,15 @@ impl Rectangle {
         self.width > other.width || self.height > other.height
     }
 }
+
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
+}
 fn main() {
     let rect: Rectangle = Rectangle {
         width: 30,
@@ -38,4 +47,7 @@ fn main() {
         &rect2,
         rect.can_hold(&rect2)
     );
+
+    let rect3: Rectangle = Rectangle::square(3);
+    println!("{:#?}", rect3);
 }
